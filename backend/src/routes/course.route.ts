@@ -7,6 +7,7 @@ import CreateCourseService from '../services/CreateCourseService';
 import UpdateCourseService from '../services/UpdateCourseService';
 import UpdateCourseImageService from '../services/UpdateCourseImageService';
 import ListCoursesService from '../services/ListCoursesService';
+import ListEspecificClasses from '../services/ListEspecificClasses';
 
 import verifyAuthentication from '../middlewares/verifyAuthentication';
 
@@ -85,4 +86,19 @@ courseRoutes.get('/', async (request, response) => {
     return response.status(400).json({ error: err.message });
   }
 });
+
+courseRoutes.get('/:course_id/lesson', async (request, response) => {
+  try {
+    const { course_id } = request.params;
+
+    const listEspecificClasses = new ListEspecificClasses();
+
+    const lessons = await listEspecificClasses.execute(course_id);
+
+    return response.status(200).json(lessons);
+  } catch (err) {
+    return response.status(400).json({ error: err.message });
+  }
+});
+
 export default courseRoutes;
