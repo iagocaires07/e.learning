@@ -5,7 +5,7 @@ import Lesson from '../models/Lesson';
 
 interface IRequest {
   name: string;
-  duration: string;
+  duraction: string;
   description: string;
   course_id: string;
   video_id: string;
@@ -14,7 +14,7 @@ interface IRequest {
 class CreateLessonService {
   public async execute({
     name,
-    duration,
+    duraction,
     description,
     course_id,
     video_id,
@@ -22,7 +22,7 @@ class CreateLessonService {
     const lessonRepositorie = getRepository(Lesson);
     const lesson = lessonRepositorie.create({
       name,
-      duration,
+      duraction,
       description,
       course_id,
       video_id,

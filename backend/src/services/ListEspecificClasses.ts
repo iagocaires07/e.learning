@@ -14,8 +14,6 @@ class ListEspecificClasses {
 
     const findLessonForId = await lessonsRepositorie.find({ course_id });
 
-    console.log(findLessonForId);
-
     if (findLessonForId.length === 0) {
       throw new Error('There are no classes registered for this course.');
     }

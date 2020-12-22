@@ -18,7 +18,7 @@ export default class CreateLesson1608594810015 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'duration',
+            name: 'duraction',
             type: 'varchar',
           },
           {

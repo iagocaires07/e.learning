@@ -18,7 +18,7 @@ class Lesson {
   name: string;
 
   @Column()
-  duration: string;
+  duraction: string;
 
   @ManyToOne(() => Courses)
   @JoinColumn({ name: 'course_id' })
